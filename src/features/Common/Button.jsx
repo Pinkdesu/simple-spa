@@ -1,14 +1,25 @@
-import React from "react";
+import React, { memo } from "react";
 import "./style.css";
 
 const Button = (props) => {
-   const { text, onClick } = props;
+   const { text, color, onClick } = props;
 
+   const getStyle = () => {
+      switch(color) {
+         case "blue":
+            return "btnBlue"
+         default:
+            return "btnBlue"
+      }
+   }  
+
+   const buttonColor = getStyle();
+   
    return (
-      <button onClick={onClick}>
+      <button onClick={onClick} className={`button ${buttonColor}`}>
          {text}
       </button>
    );
 }
 
-export default Button;
+export default memo(Button);

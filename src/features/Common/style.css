@@ -1,0 +1,34 @@
+.button {
+   padding: 5px;
+   color: #fff;
+   border-radius: 5px;
+   min-width: 50px;
+   outline: none;
+   border: none;
+}
+
+.button.btnBlue {
+   background-color: #3498DB;
+}
+
+.text-field {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.text-field label {
+   margin-right: 10px;
+   font-size: 14px;
+}
+
+.text-field input {
+   padding: 5px;
+   border-color: 1px solid #000;
+} 
+
+.button, .text-field {
+   font-weight: 300;
+   font-size: 12px;
+}

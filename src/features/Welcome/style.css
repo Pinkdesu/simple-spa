@@ -1,0 +1,26 @@
+.welcome-page {
+   max-width: 500px;
+}
+
+.welcome-page__label-block,
+.welcome-page__button-block {
+   display: flex;
+   flex-flow: column nowrap;
+}
+
+.welcome-page__label-block{
+   padding: 10px 0;
+}
+
+.welcome-page__label-block > *{
+   margin-bottom: 10px;
+}
+
+.welcome-page__button-block {
+   align-items: flex-end;
+   justify-content: center;
+}
+
+.welcome-page__button-block button:first-child {
+   margin-bottom: 5px;
+}
