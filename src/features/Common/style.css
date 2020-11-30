@@ -11,6 +11,12 @@
    background-color: #3498DB;
 }
 
+.text-field-wrapper{
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+}
+
 .text-field {
    display: flex;
    flex-flow: row nowrap;
@@ -23,12 +29,34 @@
    font-size: 14px;
 }
 
+.text-field label.error,
+.text-field input.error::placeholder {
+   color: rgba(255, 0, 0, 0.7);
+}
+
 .text-field input {
    padding: 5px;
-   border-color: 1px solid #000;
+   border: 1px solid #000;
+}
+
+.text-field input.error {
+   border: 1px solid rgba(255, 0, 0, 0.7);
 } 
 
 .button, .text-field {
    font-weight: 300;
    font-size: 12px;
+}
+
+.error-bar {
+   width: 100%;
+   color: rgba(255, 0, 0, 0.7);
+   font-size: 12px;
+   text-align: center;
+   visibility: hidden;
+   margin-bottom: 5px;
+}
+
+.error-bar.visible {
+   visibility: visible;
 }
