@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { validateEmail } from "../../utils/validateEmail";
 import  * as actions from "../../redux/actions/appBootstrap"
-import * as constants from "../../constants";
+import * as constants from "./constants";
 import TextField from "../Common/TextField";
 import Button from "../Common/Button";
 import ErrorBar from "../Common/ErrorBar";
@@ -10,6 +11,7 @@ import "./style.css";
 
 const Welcome = () => {
    const dispatch = useDispatch();
+   const history = useHistory();
 
    const [values, setValues] = useState({
       email: "",
@@ -44,7 +46,7 @@ const Welcome = () => {
       }));
    };
 
-   const singIn = () => {
+   const signIn = () => {
       const isValEmail = !validateEmail(values.email);
       const isSmallPassword = values.password.length < 8;
 
@@ -62,30 +64,30 @@ const Welcome = () => {
       dispatch(actions.signIn())
    };
 
+   const signUp = () => {
+      history.push('/registration');
+   };
+
    return (
       <div className="welcome-page">
-         <ErrorBar />
+         <ErrorBar errors={errors}/>
          <div className="welcome-page__label-block">
             <TextField 
-               type="text" 
+               {...constants.LOGIN_INFO.eMail}
                value={values.email} 
-               placeholder="user@email.com" 
-               label="E-mail"
-               error={errors.email}
+               isError={Boolean(errors.email)}
                onChange={handleChange("email")}
             />
             <TextField 
-               type="password" 
+               {...constants.LOGIN_INFO.password}
                value={values.password}
-               placeholder="Write your password..." 
-               label="Password"
-               error={errors.password}
+               isError={Boolean(errors.password)}
                onChange={handleChange("password")}
             />
          </div>
          <div className="welcome-page__button-block">
-            <Button text="Sign in" onClick={singIn}/>
-            <Button text="Sign up"/>
+            <Button text="Sign in" onClick={signIn}/>
+            <Button text="Sign up" onClick={signUp}/>
          </div>
       </div>
    );

@@ -1,0 +1,12 @@
+.registration__info > * {
+      margin-bottom: 10px;
+}
+
+.registration__button-block {
+   text-align: right;
+   margin-top: 20px;
+}
+
+.registration__button-block button:first-child {
+   margin-right: 10px;
+}

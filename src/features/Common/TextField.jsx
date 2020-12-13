@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import ErrorBar from "./ErrorBar";
 import "./style.css";
 
 const TextField = (props) => {
@@ -8,16 +7,14 @@ const TextField = (props) => {
       value, 
       label, 
       onChange, 
-      error, 
       placeholder, 
+      isError = false, 
       disabled = false, 
    } = props;
 
-   const errorStyle = Boolean(error) ? "error" : "";
+   const errorStyle = isError ? "error" : "";
 
    return (
-      <div className="text-field-wrapper">
-         <ErrorBar text={error} />
          <div className="text-field">
             <label className={errorStyle}>
                {label}
@@ -31,7 +28,6 @@ const TextField = (props) => {
                className={errorStyle}
             />
          </div>
-      </div>
    );
 }
 
