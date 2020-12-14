@@ -10,7 +10,7 @@ import "./style.css";
 
 const Registration = () => {
    return (
-      <div className="registration"> 
+      <div className="registration main"> 
          <Header text="Registration"/>
          <div className="column-container">
             <UploadImage/>

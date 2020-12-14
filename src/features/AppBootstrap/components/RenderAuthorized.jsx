@@ -5,7 +5,7 @@ import Profile from "../../Profile"
 const RenderAuthorized = () => {
    return (
       <Switch>
-         <Route path="/profile" component={Profile} exact/>
+         <Route path="/" component={Profile} exact/>
       </Switch>
    )
 }

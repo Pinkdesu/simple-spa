@@ -8,6 +8,8 @@ const Button = (props) => {
       switch(color) {
          case "blue":
             return "btnBlue"
+         case "yellow":
+            return "btnYellow"
          default:
             return "btnBlue"
       }

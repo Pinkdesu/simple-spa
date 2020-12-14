@@ -20,7 +20,7 @@ body > #root{
    align-items: center;
 }
 
-.default-view > div {
+.default-view .main {
    width: 600px;
 }
 
