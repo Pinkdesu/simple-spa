@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Header from "../Common/Header";
 import UploadImage from "../UploadImage";
 import List from "../Common/List";
@@ -7,13 +8,19 @@ import Button from "../Common/Button";
 import "./style.css"
 
 const Profile = () => {
+   const history = useHistory();
+
+   const goToChangePasswordPage = () => {
+      history.push("/change-password")
+   };
+
    return (
       <div className="main">
          <Header text="Username"/>
          <div className="column-container">
             <UploadImage/>
             <div className="profile__info">
-               <List header="Login Information">
+               <List header="Login Information" onClick={goToChangePasswordPage}>
                   <ListItem text="Email: example@gmail.com"/>
                   <ListItem text="Password: ********"/>
                </List>

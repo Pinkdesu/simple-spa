@@ -71,7 +71,7 @@ const Welcome = () => {
    return (
       <div className="welcome-page">
          <ErrorBar errors={errors}/>
-         <div className="welcome-page__label-block">
+         <div className="label-block">
             <TextField 
                {...constants.LOGIN_INFO.eMail}
                value={values.email} 
@@ -85,7 +85,7 @@ const Welcome = () => {
                onChange={handleChange("password")}
             />
          </div>
-         <div className="welcome-page__button-block">
+         <div className="button-block">
             <Button text="Sign in" onClick={signIn}/>
             <Button text="Sign up" onClick={signUp}/>
          </div>

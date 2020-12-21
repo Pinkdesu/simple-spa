@@ -30,3 +30,30 @@ body > #root{
    justify-content: space-between;
    align-items: flex-start;
 }
+
+.label-block,
+.button-block {
+   display: flex;
+   flex-flow: column nowrap;
+}
+
+.label-block{
+   padding: 10px 0;
+}
+
+.label-block > *{
+   margin-bottom: 10px;
+}
+
+.button-block {
+   align-items: flex-end;
+   justify-content: center;
+}
+
+.button-block button:first-child {
+   margin-bottom: 5px;
+}
+
+.form-wrapper {
+   max-width: 350px;
+}
