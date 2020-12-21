@@ -40,7 +40,7 @@ const Registration = () => {
                   {...REGISTRATION_INFO.rePassword}
                   value=""
                />
-               <div className="registration__button-block">
+               <div className="button-block row">
                   <Button text={BUTTON_OK}/>
                   <Button text={BUTTON_CANCEL}/>
                </div>

@@ -35,6 +35,12 @@ body > #root{
 .button-block {
    display: flex;
    flex-flow: column nowrap;
+   align-items: flex-end;
+   justify-content: center;
+}
+
+.button-block button:first-child {
+   margin-bottom: 5px;
 }
 
 .label-block{
@@ -45,13 +51,16 @@ body > #root{
    margin-bottom: 10px;
 }
 
-.button-block {
-   align-items: flex-end;
-   justify-content: center;
+.button-block.row {
+   flex-flow: row nowrap;
+   justify-content: flex-end;
+   align-items: center;
+   margin-top: 20px;
 }
 
-.button-block button:first-child {
-   margin-bottom: 5px;
+.button-block.row button:first-child {
+   margin-right: 10px;
+   margin-bottom: 0;
 }
 
 .form-wrapper {

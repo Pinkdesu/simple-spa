@@ -66,7 +66,7 @@ const ChangePasswordPage = () => {
                   onChange={handleChange("repeatPassword")}
                />
             </div>
-            <div className="button-block">
+            <div className="button-block row">
                <Button text={BUTTON_OK} onClick={saveChanges}/>
                <Button text={BUTTON_CANCEL}/>
             </div>

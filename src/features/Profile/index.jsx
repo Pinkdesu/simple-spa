@@ -11,8 +11,12 @@ const Profile = () => {
    const history = useHistory();
 
    const goToChangePasswordPage = () => {
-      history.push("/change-password")
+      history.push("/change-password");
    };
+
+   const goToChangeInfoPage = () => {
+      history.push('/change-info');
+   }
 
    return (
       <div className="main">
@@ -24,7 +28,7 @@ const Profile = () => {
                   <ListItem text="Email: example@gmail.com"/>
                   <ListItem text="Password: ********"/>
                </List>
-               <List header="">
+               <List header="Profile Information" onClick={goToChangeInfoPage}>
                   <ListItem text="First Name: John"/>
                   <ListItem text="Last Name: Smith"/>
                   <ListItem text="Country: Russia"/>

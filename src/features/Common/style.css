@@ -7,7 +7,6 @@
    border: none;
    cursor: pointer;
 }
-
 .text-field, 
 .list__header,
 .list-item {
@@ -33,21 +32,34 @@
    align-items: center;
 }
 
+.text-area {
+   align-items: flex-start;
+}
+
+.text-area textarea{
+   height: 100px !important;
+   resize: none;
+}
+
 .text-field label {
    margin-right: 20px;
    font-size: 14px;
 }
 
 .text-field label.error,
-.text-field input.error::placeholder {
+.text-field input.error::placeholder,
+.text-area textarea.error::placeholder {
    color: rgba(255, 0, 0, 0.7);
 }
 
+.text-area textarea,
 .text-field input {
+   width: 180px !important;
    padding: 5px;
    border: 1px solid #207ab6;
 }
 
+.text-area textarea.error,
 .text-field input.error {
    border: 1px solid rgba(255, 0, 0, 0.7);
 } 
