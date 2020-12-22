@@ -9,7 +9,7 @@ const AppBootstrap = () => {
 
    return (
       <div className="default-view">
-         {!isAuthorized ? <RenderAuthorized /> : <Sign />}
+         {isAuthorized ? <RenderAuthorized /> : <Sign />}
       </div>
    );
 }

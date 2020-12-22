@@ -1,0 +1,3 @@
+const PREFIX = "UI"
+
+export const CHANGE_USER_DATA = `${PREFIX}/CHANGE_USER_DATA`;

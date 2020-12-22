@@ -1,16 +1,36 @@
 import * as types from "../types/appBootstrap";
+import produce from "immer"
 
 const initialState = {
+   user: {
+      email: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      country: '',
+      about: '',
+      pin: ''
+   },
    isAuthorized: false
 }
 
-const uiReducer = (state = initialState, { type, payload }) => {
+const uiReducer = (state = initialState, action) => 
+produce(state, (draft) => {
+   const { type, payload } = action;
+
    switch (type) {
-      case types.SIGN_IN: 
-         return {...state, isAuthorized: true }
-      default:
-         return state;
+      case types.SIGN_IN: {
+         draft.isAuthorized = true;
+         draft.user = {
+            ...draft.user,
+            ...payload
+         };
+
+         break;
+      }
+      default: 
+         break;
    }
-}
+});
 
 export default uiReducer;

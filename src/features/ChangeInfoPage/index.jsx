@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from "react";
+import { useSelector } from "react-redux";
+import { userSelector } from "../../redux/selectors/uiSelector";
 import Header from "../Common/Header";
 import UploadImage from "../UploadImage";
 import Button from "../Common/Button";
@@ -11,11 +13,15 @@ import { ABOUT } from "./constants";
 import { BUTTON_CANCEL, BUTTON_OK} from "../Registration/constants";
 
 const ChangeInfoPage = () => {
+   const user = useSelector(userSelector);
+
+   const { firstName, lastName, country, about } = user;
+
    const [values, setValues] = useState({
-      firstName: '',
-      lastName: '',
-      country: '',
-      about: ''
+      firstName,
+      lastName,
+      country,
+      about,
    });
 
    const [errors, setErrors] = useState({

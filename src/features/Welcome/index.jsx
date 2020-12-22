@@ -61,7 +61,7 @@ const Welcome = () => {
          return;
       }
 
-      dispatch(actions.signIn())
+      dispatch(actions.signIn(values))
    };
 
    const signUp = () => {

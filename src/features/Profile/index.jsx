@@ -1,5 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { userSelector } from "../../redux/selectors/uiSelector";
 import Header from "../Common/Header";
 import UploadImage from "../UploadImage";
 import List from "../Common/List";
@@ -9,6 +11,10 @@ import "./style.css"
 
 const Profile = () => {
    const history = useHistory();
+
+   const user = useSelector(userSelector);
+
+   const { email, firstName, lastName, country, pin, about } = user;
 
    const redirectTo = (path) => () => {
       history.push(path);
@@ -21,17 +27,17 @@ const Profile = () => {
             <UploadImage/>
             <div className="profile__info">
                <List header="Login Information" onClick={redirectTo("/change-password")}>
-                  <ListItem text="Email: example@gmail.com"/>
-                  <ListItem text="Password: ********"/>
+                  <ListItem text={`Email: ${email}`}/>
+                  <ListItem text="Password: *********"/>
                </List>
                <List header="Profile Information" onClick={redirectTo("/change-info")}>
-                  <ListItem text="First Name: John"/>
-                  <ListItem text="Last Name: Smith"/>
-                  <ListItem text="Country: Russia"/>
-                  <ListItem text="about: About myself"/>
+                  <ListItem text={`First Name: ${firstName}`}/>
+                  <ListItem text={`Last Name: ${lastName}`}/>
+                  <ListItem text={`Country: ${country}`}/>
+                  <ListItem text={`About: ${about}`}/>
                </List>
                <List header="Personal Identification Number">
-                  <ListItem text="PIN">
+                  <ListItem text={`PIN ${pin}`}>
                      <Button text="Set PIN" color="yellow" onClick={redirectTo("/change-pin")}/>
                   </ListItem>
                </List>
