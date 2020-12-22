@@ -4,6 +4,7 @@ import Button from "../Common/Button";
 import ErrorBar from "../Common/ErrorBar";
 import TextField from "../Common/TextField";
 import * as constants from "./constants"
+import useBack from "../../utils/useBack";
 import { BUTTON_CANCEL, BUTTON_OK} from "../Registration/constants";
 import "./style.css";
 
@@ -40,6 +41,8 @@ const ChangePasswordPage = () => {
       
    }, []);
 
+   const goBack = useBack();
+
    return (
       <div className="main change-password-page">
          <Header text="Username\Login"/>
@@ -68,7 +71,7 @@ const ChangePasswordPage = () => {
             </div>
             <div className="button-block row">
                <Button text={BUTTON_OK} onClick={saveChanges}/>
-               <Button text={BUTTON_CANCEL}/>
+               <Button text={BUTTON_CANCEL} onClick={goBack}/>
             </div>
          </div>
       </div>

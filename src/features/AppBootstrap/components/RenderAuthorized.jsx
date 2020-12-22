@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Profile from "../../Profile";
 import ChangePasswordPage from "../../ChangePasswordPage";
 import ChangeInfoPage from "../../ChangeInfoPage";
+import ChangePinPage from "../../ChangePinPage";
 
 const RenderAuthorized = () => {
    return (
@@ -10,6 +11,7 @@ const RenderAuthorized = () => {
          <Route path="/" component={Profile} exact/>
          <Route path="/change-password" component={ChangePasswordPage} exact/>
          <Route path="/change-info" component={ChangeInfoPage} exact/>
+         <Route path="/change-pin" component={ChangePinPage} exact/>
       </Switch>
    )
 }

@@ -10,13 +10,9 @@ import "./style.css"
 const Profile = () => {
    const history = useHistory();
 
-   const goToChangePasswordPage = () => {
-      history.push("/change-password");
+   const redirectTo = (path) => () => {
+      history.push(path);
    };
-
-   const goToChangeInfoPage = () => {
-      history.push('/change-info');
-   }
 
    return (
       <div className="main">
@@ -24,11 +20,11 @@ const Profile = () => {
          <div className="column-container">
             <UploadImage/>
             <div className="profile__info">
-               <List header="Login Information" onClick={goToChangePasswordPage}>
+               <List header="Login Information" onClick={redirectTo("/change-password")}>
                   <ListItem text="Email: example@gmail.com"/>
                   <ListItem text="Password: ********"/>
                </List>
-               <List header="Profile Information" onClick={goToChangeInfoPage}>
+               <List header="Profile Information" onClick={redirectTo("/change-info")}>
                   <ListItem text="First Name: John"/>
                   <ListItem text="Last Name: Smith"/>
                   <ListItem text="Country: Russia"/>
@@ -36,7 +32,7 @@ const Profile = () => {
                </List>
                <List header="Personal Identification Number">
                   <ListItem text="PIN">
-                     <Button text="Set PIN" color="yellow"/>
+                     <Button text="Set PIN" color="yellow" onClick={redirectTo("/change-pin")}/>
                   </ListItem>
                </List>
             </div>
