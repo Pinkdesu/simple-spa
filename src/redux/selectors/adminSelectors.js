@@ -5,3 +5,5 @@ export const isAdminAuthorizedSelector = (state) => state[STORE_NAME].isAdminAut
 export const adminSelector = (state) => state[STORE_NAME].admin;
 
 export const usersSelector = (state) => state[STORE_NAME].users;
+
+export const eventsSelector = (state) => state[STORE_NAME].events;

@@ -1,14 +1,15 @@
 import produce from "immer"
 import * as types from "../types/admin";
-import { USERS } from "../../constants";
+import { USERS, EVENTS } from "../../constants";
 
 const initialState = {
+   isAdminAuthorized: false,
    admin: {
       email: '',
       password: ''
    },
    users: USERS,
-   isAdminAuthorized: false
+   events: EVENTS,
 }
 
 const adminReducer = (state = initialState, action) => 

@@ -1,0 +1,1 @@
+export const HEAD_COLS = ["Event", "Dates", "Participants"];

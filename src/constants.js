@@ -22,4 +22,27 @@ export const USERS = [
       role: 'Competitor',
       assign: 'remove'
    },
-]
+];
+
+export const EVENTS = [
+   {
+      id: 1,
+      userId: 1,
+      title: 'Example Event #1',
+      startDate: new Date("2020-12-01"),
+      finishDate: new Date("2020-12-06"),
+      c1Date: new Date("2020-12-03"),
+      c2Date: new Date("2020-12-05"),
+      participants: 12,
+   },
+   {
+      id: 2,
+      userId: 2,
+      title: 'Example Event #2',
+      startDate: new Date("2020-11-01"),
+      finishDate: new Date("2020-11-06"),
+      c1Date: new Date("2020-11-03"),
+      c2Date: new Date("2020-11-05"),
+      participants: 15,
+   },
+];
