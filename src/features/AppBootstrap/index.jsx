@@ -17,7 +17,7 @@ const AppBootstrap = () => {
    if(location.pathname.includes('/admin')) {
       return (
          <div className="default-view">
-            {isAdminAuthorized ? <RenderAdminAuthorized/>: <AdminSign/>}
+            {!isAdminAuthorized ? <RenderAdminAuthorized/>: <AdminSign/>}
          </div>
       );
    }

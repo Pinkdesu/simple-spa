@@ -1,11 +1,13 @@
 import produce from "immer"
 import * as types from "../types/admin";
+import { USERS } from "../../constants";
 
 const initialState = {
    admin: {
       email: '',
       password: ''
    },
+   users: USERS,
    isAdminAuthorized: false
 }
 

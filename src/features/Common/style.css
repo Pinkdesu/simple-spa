@@ -15,12 +15,22 @@
    justify-content: space-between;
 }
 
+.admin_list__header {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: flex-start;
+}
+
 .button.btnBlue {
    background-color: #3498DB;
 }
 
 .button.btnYellow {
    background-color: #d3bf12;
+}
+
+.button.btnRed {
+   background-color: #e04343;
 }
 
 .input--file input {
@@ -64,7 +74,9 @@
    border: 1px solid rgba(255, 0, 0, 0.7);
 } 
 
-.button, .text-field {
+.table tbody tr > td,
+.button, 
+.text-field {
    font-weight: 300;
    font-size: 12px;
 }
@@ -97,14 +109,24 @@
    min-width: 300px;
 }
 
+.admin_list {
+   min-width: 150px;
+}
+
+.admin_list__header,
 .list__header {
    background-color: #8dc6ec;
    color: #000;
    padding: 4px;
 }
 
+.admin_list .list-item,
 .header__icon {
    cursor: pointer;
+}
+
+.admin_list .list-item:hover{
+   font-weight: 600;
 }
 
 .header__icon svg {
@@ -128,4 +150,24 @@
 
 .list-item:last-child {
    margin-bottom: 0;
+}
+
+.table thead tr > td {
+   background-color: rgb(19, 19, 216);
+   color: #fff;
+   padding: 5px;
+}
+
+.table tbody tr > td {
+   background-color: #207ab6;
+   color: #000;
+   padding: 5px;
+}
+
+.table tbody tr:nth-child(2) > td {
+   background-color: #8dc6ec;
+}
+
+.table td {
+   min-width: 50px;
 }

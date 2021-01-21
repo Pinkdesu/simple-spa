@@ -10,6 +10,8 @@ const Button = (props) => {
             return "btnBlue"
          case "yellow":
             return "btnYellow"
+         case "red":
+            return "btnRed"
          default:
             return "btnBlue"
       }
