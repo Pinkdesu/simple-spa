@@ -20,6 +20,7 @@ produce(state, (draft) => {
    const { type, payload } = action;
 
    switch (type) {
+      case appTypes.SIGN_UP:
       case appTypes.SIGN_IN: {
          draft.isAuthorized = true;
          draft.user = {

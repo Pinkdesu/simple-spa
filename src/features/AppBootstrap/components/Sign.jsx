@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Welcome from "../../Welcome";
 import Registration from "../../Registration"
 
@@ -8,6 +8,7 @@ const Sign = () => {
       <Switch>
          <Route path="/" component={Welcome} exact/>
          <Route path="/registration" component={Registration} exact/>
+         <Redirect from="*" to="/" exact/>
       </Switch>
    );
 }

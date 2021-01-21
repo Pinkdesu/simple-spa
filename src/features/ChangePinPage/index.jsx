@@ -20,12 +20,16 @@ const ChangePinPage = () => {
 
    const validePin = () => {
       let pinError = error.pin;
+      let isValid = true;
 
-      if (pin < 1000 || pin > 9999 || isNaN(pin)) {
-         pinError = ERROR_CODES[6] 
+      if (+pin < 1000 || +pin > 9999 || isNaN(+pin)) {
+         pinError = ERROR_CODES[6];
+         isValid = false;
       }
 
       setError({ pin: pinError });
+
+      return isValid;
    }
 
    const handleChange = (e) => {
@@ -39,7 +43,7 @@ const ChangePinPage = () => {
 
    const handleClick = () => {
       if(!validePin()) return;
-
+      console.log(1)
       dispatch(changePin(pin));
       goBack();
    }
