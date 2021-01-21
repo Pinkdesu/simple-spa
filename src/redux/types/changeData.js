@@ -1,0 +1,3 @@
+const PREFIX = "CHANDE_DATA";
+
+export const CHANGE_PASSWORD = `${PREFIX}/CHANGE_PASSWORD`;

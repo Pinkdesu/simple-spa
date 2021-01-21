@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { validateEmail } from "../../utils/validateEmail";
 import  * as actions from "../../redux/actions/appBootstrap"
 import * as constants from "./constants";
+import { ERROR_CODES } from "../../constants";
 import TextField from "../Common/TextField";
 import Button from "../Common/Button";
 import ErrorBar from "../Common/ErrorBar";
@@ -52,11 +53,11 @@ const Welcome = () => {
 
       if (isValEmail || isSmallPassword) {
          if(isValEmail) {
-            errorHandler("email", constants.EMAIL_INCORRECTLY)
+            errorHandler("email", ERROR_CODES[1])
          }
    
          if(isSmallPassword) {
-            errorHandler("password", constants.PASSWORD_CONSIST)
+            errorHandler("password", ERROR_CODES[3])
          }
          return;
       }
