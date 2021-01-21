@@ -1,3 +1,5 @@
 const PREFIX = "CHANDE_DATA";
 
 export const CHANGE_PASSWORD = `${PREFIX}/CHANGE_PASSWORD`;
+export const CHANGE_USER_INFO = `${PREFIX}/CHANGE_USER_INFO`;
+export const CHANGE_PIN = `${PREFIX}/CHANGE_PIN`;

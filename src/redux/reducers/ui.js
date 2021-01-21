@@ -1,4 +1,5 @@
-import * as types from "../types/appBootstrap";
+import * as appTypes from "../types/appBootstrap";
+import * as changeDataTypes from "../types/changeData";
 import produce from "immer"
 
 const initialState = {
@@ -19,7 +20,7 @@ produce(state, (draft) => {
    const { type, payload } = action;
 
    switch (type) {
-      case types.SIGN_IN: {
+      case appTypes.SIGN_IN: {
          draft.isAuthorized = true;
          draft.user = {
             ...draft.user,
@@ -28,6 +29,17 @@ produce(state, (draft) => {
 
          break;
       }
+
+      case changeDataTypes.CHANGE_PIN:
+      case changeDataTypes.CHANGE_PASSWORD: 
+      case changeDataTypes.CHANGE_USER_INFO: {
+         draft.user = {
+            ...draft.user,
+            ...payload,
+         }
+         break;
+      }
+      
       default: 
          break;
    }

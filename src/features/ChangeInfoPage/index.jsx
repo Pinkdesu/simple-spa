@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../../redux/selectors/uiSelector";
+import { changeUserInfo } from "../../redux/actions/changeData";
 import Header from "../Common/Header";
 import UploadImage from "../UploadImage";
 import Button from "../Common/Button";
@@ -11,19 +12,22 @@ import useBack from "../../utils/useBack";
 import { REGISTRATION_INFO } from "../Registration/constants";
 import { ABOUT } from "./constants";
 import { BUTTON_CANCEL, BUTTON_OK} from "../Registration/constants";
+import { ERROR_CODES } from "../../constants";
 
 const ChangeInfoPage = () => {
+   const dispatch = useDispatch();
+   
    const user = useSelector(userSelector);
-
+   
    const { firstName, lastName, country, about } = user;
-
+   
    const [values, setValues] = useState({
       firstName,
       lastName,
       country,
       about,
    });
-
+   
    const [errors, setErrors] = useState({
       firstName: null,
       lastName: null,
@@ -31,6 +35,8 @@ const ChangeInfoPage = () => {
       about: null
    });
    
+   const goBack = useBack();
+
    const handleChange = useCallback((stateName) => (e) => {
       const value = e.target.value;
 
@@ -38,9 +44,46 @@ const ChangeInfoPage = () => {
          ...prevState,
          [stateName]: value
       }));
+
+      setErrors(prevState => ({
+         ...prevState,
+         [stateName]: null
+      }));
    }, []);
 
-   const goBack = useBack();
+   const validateInfo = () => {
+      const currentErrorrs = { ...errors };
+      const { firstName, lastName, country } = values;
+      
+      let isValide = true;
+
+      if(!firstName.length){
+         currentErrorrs["firstName"] = ERROR_CODES[5];
+         isValide = false;
+      }
+
+      if(!lastName.length) {
+         currentErrorrs["lastName"] = ERROR_CODES[5];
+         isValide = false;
+      }
+
+      if(!country.length) {
+         currentErrorrs["country"] = ERROR_CODES[5];
+         isValide = false;
+      }
+      
+      setErrors(currentErrorrs);
+
+      return isValide;
+   }
+
+   const handleClick = () => {
+      const { firstName, lastName, country, about } = values;
+      console.log(firstName);
+      if(!validateInfo()) return;
+      dispatch(changeUserInfo({firstName, lastName, country, about}));
+      goBack();
+   }
 
    return (
       <div className="main">
@@ -76,7 +119,7 @@ const ChangeInfoPage = () => {
                 />
                </div>
                <div className="button-block row">
-                  <Button text={BUTTON_OK} />
+                  <Button text={BUTTON_OK} onClick={handleClick}/>
                   <Button text={BUTTON_CANCEL} onClick={goBack}/>
                </div>
             </div>
