@@ -3,10 +3,10 @@ import TableCell from "./TableCell";
 import "./style.css";
 
 const Table = (props) => {
-   const { headCols = [], children } = props;
+   const { headCols = [], className = '', children } = props;
 
    return (
-      <table className="table">
+      <table className={`table ${className}`}>
          <thead>
             <tr>
                {headCols.map((text, index) => (

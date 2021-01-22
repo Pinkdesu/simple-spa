@@ -165,10 +165,28 @@
    padding: 5px;
 }
 
-.table tbody tr:nth-child(2) > td {
+.table tbody tr:nth-child(2n) > td {
    background-color: #8dc6ec;
 }
 
-.table td {
-   min-width: 50px;
+.table.colorTable td:nth-child(1),
+.table.colorTable td:nth-child(2) {
+   background-color: #d3bf12;
+}
+
+.table.colorTable td:nth-child(3),
+.table.colorTable td:nth-child(4) {
+   background-color: #81c725;
+}
+
+.table.colorTable td:nth-child(5),
+.table.colorTable td:nth-child(6) {
+   background-color: #207ab6;
+}
+
+.table.colorTable td {
+   min-width: 80px;
+}
+
+.table.colorTable tr:hover {
 }

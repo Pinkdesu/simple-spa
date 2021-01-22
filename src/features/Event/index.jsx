@@ -8,7 +8,7 @@ import UploadImage from "../UploadImage";
 import List from "../Common/List";
 import ListItem from "../Common/ListItem";
 import Button from "../Common/Button";
-import "../Profile/style.css"
+import "../Profile/style.css";
 
 const Event = () => {
    const params = useParams();
@@ -39,12 +39,11 @@ const Event = () => {
                   <ListItem text={`C+1 Date: ${getDate(c2Date)}`}/>
                   <ListItem text={`Finish Date: ${getDate(finishDate)}`}/>
                </List>
-               <List header="Participants">
+               <List header="Participants" onClick={redirectTo(`/admin/event/${id}/participants`)}>
                   <ListItem text={`Participants: ${participants}`}>
                      <Button 
                         text="Assign" 
                         color="yellow" 
-                        onClick={redirectTo(`/admin/event/${id}/participants`)}
                     />
                   </ListItem>
                </List>
