@@ -119,12 +119,13 @@
    color: #000;
    padding: 4px;
 }
-
+.table tbody tr:hover,
 .admin_list .list-item,
 .header__icon {
    cursor: pointer;
 }
 
+.table tbody tr:hover > td,
 .admin_list .list-item:hover{
    font-weight: 600;
 }

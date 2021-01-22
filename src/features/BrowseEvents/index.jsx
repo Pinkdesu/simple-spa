@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { eventsSelector } from "../../redux/selectors/adminSelectors";
 import { HEAD_COLS } from "./constants";
@@ -10,7 +11,12 @@ import Button from "../Common/Button";
 import "../../index.css"
 
 const BrowseEvents = () => {
+   const history = useHistory();
    const events = useSelector(eventsSelector);
+
+   const goToEvent = (id) => () => {
+      history.push(`/admin/event/${id}`);
+   }
 
    const renderCells = (event) => {
       const { id, startDate, finishDate, participants, title } = event;
@@ -29,7 +35,7 @@ const BrowseEvents = () => {
          <div className="row-container">
             <Table headCols={HEAD_COLS}>
                {events.map((event) => (
-                  <tr key={event.id}>
+                  <tr key={event.id} onClick={goToEvent(event.id)}>
                      {renderCells(event)}
                   </tr>
                ))}
