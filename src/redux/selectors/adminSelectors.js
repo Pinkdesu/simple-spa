@@ -13,3 +13,11 @@ export const eventSelector = (id) => (state) => {
    
    return events.find(event => event.id === id);
 }
+
+export const documentsSelector = (state) => state[STORE_NAME].documents;
+
+export const documentSelector = (id) => (state) => {
+   const documents = state[STORE_NAME].documents;
+   
+   return documents.find(document => document.id === id);
+}

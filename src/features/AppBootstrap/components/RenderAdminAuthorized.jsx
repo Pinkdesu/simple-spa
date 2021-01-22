@@ -8,13 +8,17 @@ import Event from "../../Event";
 import EventTitle from "../../EventTitle";
 import EventDates from "../../EventDates";
 import EventParticipants from "../../EventParticipants";
+import BrowseDocuments from "../../BrowseDocuments";
 
 const RenderAdminAuthorized = () => {
    return (
       <Switch>
          <Route path="/admin" component={AdminMain} exact/>
+
          <Route path="/admin/user/browse" component={BrowseUsers} exact/>
          <Route path="/admin/event/browse" component={BrowseEvents} exact/>
+         <Route path="/admin/document/browse" component={BrowseDocuments} exact/>
+
          <Route path="/admin/event/create" component={AddEvent} exact/>
          <Route path="/admin/event/:id" component={Event} exact/>
          <Route path="/admin/event/:id/title" component={EventTitle} exact/>

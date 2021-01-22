@@ -46,3 +46,20 @@ export const EVENTS = [
       participants: 15,
    },
 ];
+
+export const DOCUMENTS = [
+   {
+      id: 1,
+      title: "Document 1",
+      day: "C-1",
+      content: "Bla bla bla",
+      forPers: "Experts",
+   },
+   {
+      id: 2,
+      title: "Document 2",
+      day: "C1",
+      content: "Bla bla bla",
+      forPers: "Competitors",
+   },
+];

@@ -29,6 +29,10 @@ const BrowseEvents = () => {
       });
    };
 
+   const addEvent = () => {
+      history.push("/admin/event/create");
+   };
+
    return (
       <div className="main">
          <Header text="Events"/>
@@ -42,7 +46,7 @@ const BrowseEvents = () => {
             </Table>
          </div>
          <div className="button-block row">
-            <Button text="Add Event"/>
+            <Button text="Add Event" onClick={addEvent}/>
          </div>
       </div>
    );
