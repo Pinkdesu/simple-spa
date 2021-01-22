@@ -10,6 +10,8 @@ import EventDates from "../../EventDates";
 import EventParticipants from "../../EventParticipants";
 import BrowseDocuments from "../../BrowseDocuments";
 import AddDocument from "../../AddDocument";
+import Document from "../../Document";
+import DocumentInfo from "../../DocumentInfo";
 
 const RenderAdminAuthorized = () => {
    return (
@@ -27,6 +29,9 @@ const RenderAdminAuthorized = () => {
          <Route path="/admin/event/:id/participants" component={EventParticipants} exact/>
 
          <Route path="/admin/document/create" component={AddDocument} exact/>
+         <Route path="/admin/document/:id" component={Document} exact/>
+         <Route path="/admin/document/:id/info" component={DocumentInfo} exact/>
+
          <Redirect from="*" to="/admin" exact/>
       </Switch>
    )

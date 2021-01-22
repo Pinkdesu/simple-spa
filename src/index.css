@@ -63,8 +63,8 @@ body > #root{
    margin-top: 20px;
 }
 
-.button-block.row button:first-child {
-   margin-right: 10px;
+.button-block.row button {
+   margin-left: 10px;
    margin-bottom: 0;
 }
 
